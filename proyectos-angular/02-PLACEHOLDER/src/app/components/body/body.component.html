@@ -21,3 +21,9 @@
     </ul>
   </div>
 </div>
+
+<div class="row">
+  <div *ngIf="numero % 2 == 0; then par else impar"></div>
+  <ng-template #par><h1>Número {{ numero }} - Es par</h1></ng-template>
+  <ng-template #impar><h1>Número {{ numero }} - Es impar</h1></ng-template>
+</div>

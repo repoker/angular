@@ -16,6 +16,8 @@ export class BodyComponent implements OnInit {
 
   colores: string[] = ['green', 'red', 'blue', 'brown', 'white'];
 
+  numero = Math.floor(Math.random() * (11 - 1)) + 1;
+
   constructor() {
   }
 

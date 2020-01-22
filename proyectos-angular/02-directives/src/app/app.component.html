@@ -1,0 +1,13 @@
+<div class="container main.container">
+  <h1>Demo <small>directivas</small></h1>
+  <hr>
+  <app-clases></app-clases>
+  <br><br>
+  <div appDestacado>Oferta de la semana</div>
+  <div [appDestacado]="'violet'">Oferta de la semana</div>
+  <br><br>
+  <p *appMult="5">
+    Saludos
+  </p>
+  <app-ng-switch></app-ng-switch>
+</div>
