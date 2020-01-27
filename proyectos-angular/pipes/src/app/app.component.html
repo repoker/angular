@@ -1,0 +1,98 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Variable</th>
+      <th scope="col">Pipe</th>
+      <th scope="col">Resultado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"> {{nombre}} </th>
+      <td> uppercase</td>
+      <td> {{nombre | uppercase}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{nombre}} </th>
+      <td> lowercase</td>
+      <td> {{nombre | lowercase}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{nombre}} </th>
+      <td> slice:3</td>
+      <td> {{nombre | slice:3}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{nombre}} </th>
+      <td> slice:0:3</td>
+      <td> {{nombre | slice:0:3}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{miArray}} </th>
+      <td> slice:1:5</td>
+      <td> {{miArray | slice:1:5}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{miArray}} </th>
+      <td><![CDATA[<span *ngFor="let item of miArray | slice:5:9"> {{ item }}</span>]]></td>
+      <td> {{<span *ngFor="let item of miArray | slice:5:9"> {{ item }}</span> }}</td>
+    </tr>
+    <tr>
+      <th scope="row"> {{PI}} </th>
+      <td> number</td>
+      <td> {{PI| number}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{PI}} </th>
+      <td> number:'3.0-0'</td>
+      <td> {{PI| number:'3.0-0'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{PI}} </th>
+      <td> number:'1.0-2'</td>
+      <td> {{PI| number:'1.0-2'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{ratio}} </th>
+      <td> percent</td>
+      <td> {{ratio| percent}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{ratio}} </th>
+      <td> percent:'2.2-2'</td>
+      <td> {{ratio| percent:'2.2-2'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{sueldo}} </th>
+      <td> currency </td>
+      <td> {{sueldo| currency}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{sueldo}} </th>
+      <td> currency:'EUR' </td>
+      <td> {{sueldo| currency:'EUR'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{sueldo}} </th>
+      <td> currency:'EUR':symbol </td>
+      <td> {{sueldo| currency:'EUR':'symbol'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{sueldo}} </th>
+      <td> currency:'EUR':'code':'4.0-0' </td>
+      <td> {{sueldo| currency:'EUR':'code':'4.0-0'}} </td>
+    </tr>
+    <tr>
+      <th scope="row"> {{sueldo}} </th>
+      <td> number:'.2-2' </td>
+      <td> {{sueldo| number:'.2-2'}} </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
