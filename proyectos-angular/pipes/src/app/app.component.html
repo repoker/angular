@@ -69,29 +69,90 @@
     </tr>
     <tr>
       <th scope="row"> {{sueldo}} </th>
-      <td> currency </td>
+      <td> currency</td>
       <td> {{sueldo| currency}} </td>
     </tr>
     <tr>
       <th scope="row"> {{sueldo}} </th>
-      <td> currency:'EUR' </td>
+      <td> currency:'EUR'</td>
       <td> {{sueldo| currency:'EUR'}} </td>
     </tr>
     <tr>
       <th scope="row"> {{sueldo}} </th>
-      <td> currency:'EUR':symbol </td>
+      <td> currency:'EUR':symbol</td>
       <td> {{sueldo| currency:'EUR':'symbol'}} </td>
     </tr>
     <tr>
       <th scope="row"> {{sueldo}} </th>
-      <td> currency:'EUR':'code':'4.0-0' </td>
+      <td> currency:'EUR':'code':'4.0-0'</td>
       <td> {{sueldo| currency:'EUR':'code':'4.0-0'}} </td>
     </tr>
     <tr>
       <th scope="row"> {{sueldo}} </th>
-      <td> number:'.2-2' </td>
+      <td> number:'.2-2'</td>
       <td> {{sueldo| number:'.2-2'}} </td>
     </tr>
+    <tr>
+      <th scope="row"><pre>
+        <![CDATA[info = {
+        nombre: 'Juan',
+        clave: 'jkg',
+        edad: 26,
+        direccion: {
+                 calle: 'Principal',
+                 numero: 2
+             }}]]>
+      </pre>
+      </th>
+      <td> sin pipe</td>
+      <td> {{info}} </td>
+    </tr>
+    <tr>
+      <th scope="row"><pre>
+        <![CDATA[info = {
+        nombre: 'Juan',
+        clave: 'jkg',
+        edad: 26,
+        direccion: {
+                 calle: 'Principal',
+                 numero: 2
+             }}]]>
+      </pre>
+      </th>
+      <td> sin pipe</td>
+      <td> {{info | json}} </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> {{ laPromesa }} </th>
+      <td> async</td>
+      <td> ...{{ laPromesa }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> {{ laPromesa }} </th>
+      <td> async </td>
+      <td> ...{{ laPromesa | async }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> {{ usuario }} </th>
+      <td> capitalize </td>
+      <td> {{ usuario | capitalize }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> {{ contrasenya }} </th>
+      <td> obfuscate </td>
+      <td> {{ contrasenya | ofuscate:true }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> {{ contrasenya }} </th>
+      <td> obfuscate </td>
+      <td> {{ contrasenya | ofuscate:false }} </td>
+    </tr>
+
     </tbody>
   </table>
 
