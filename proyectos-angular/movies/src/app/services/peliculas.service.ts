@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
-import { Pelicula } from '../models/pelicula';
+import {Pelicula} from '../models/peliculas/pelicula';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeliculasService {
-
   private peliculas: Pelicula[] = [
     {
       id: 1001,
@@ -90,7 +89,7 @@ export class PeliculasService {
     {
       id: 1011,
       titulo: 'Love Actually',
-      sinopsis: 'En Londres, poco antes de las Navidades, se entrelazan una serie de historias divertidas y conmovedoras. \'Love, Actually\' es una manera abreviada de decir \'Love Actually Is All Around\' y éste es precisamente el argumento de la película: mires a donde mires, encontrarás el amor en todas partes. Todos los personajes, cada uno a su manera (un primer ministro, una vieja estrella del rock, una asistenta portuguesa que sólo habla su idioma), están relacionados con los aspectos más divertidos, tristes, ingenuos y estúpidos del amor.',
+      sinopsis: 'En Londres, poco antes de las Navidades, se entrelazan una serie de historias divertidas y conmovedoras. Love, Actually es una manera abreviada de decir Love Actually Is All Around y éste es precisamente el argumento de la película: mires a donde mires, encontrarás el amor en todas partes. Todos los personajes, cada uno a su manera (un primer ministro, una vieja estrella del rock, una asistenta portuguesa que sólo habla su idioma), están relacionados con los aspectos más divertidos, tristes, ingenuos y estúpidos del amor.',
       img: 'assets/img/love_actually.jpg',
       anio: 2003,
       direccion: 'Richard Curtis'
@@ -122,18 +121,34 @@ export class PeliculasService {
     {
       id: 1015,
       titulo: 'Avatar',
-      sinopsis: 'Año 2154. Jake Sully (Sam Worthington), un ex-marine condenado a vivir en una silla de ruedas, sigue siendo, a pesar de ello, un auténtico guerrero. Precisamente por ello ha sido designado para ir a Pandora, donde algunas empresas están extrayendo un mineral extraño que podría resolver la crisis energética de la Tierra. Para contrarrestar la toxicidad de la atmósfera de Pandora, se ha creado el programa Avatar, gracias al cual los seres humanos mantienen sus conciencias unidas a un avatar: un cuerpo biológico controlado de forma remota que puede sobrevivir en el aire letal. Esos cuerpos han sido creados con ADN humano, mezclado con ADN de los nativos de Pandora, los Na\'vi. Convertido en avatar, Jake puede caminar otra vez. Su misión consiste en infiltrarse entre los Na\'vi, que se han convertido en el mayor obstáculo para la extracción del mineral. Pero cuando Neytiri, una bella Na\'vi (Zoe Saldana), salva la vida de Jake, todo cambia: Jake, tras superar ciertas pruebas, es admitido en su clan. Mientras tanto, los hombres esperan los resultados de la misión de Jake.',
+      sinopsis: 'Año 2154. Jake Sully (Sam Worthington), un ex-marine condenado a vivir en una silla de ruedas, sigue siendo, a pesar de ello, un auténtico guerrero. Precisamente por ello ha sido designado para ir a Pandora, donde algunas empresas están extrayendo un mineral extraño que podría resolver la crisis energética de la Tierra. Para contrarrestar la toxicidad de la atmósfera de Pandora, se ha creado el programa Avatar, gracias al cual los seres humanos mantienen sus conciencias unidas a un avatar: un cuerpo biológico controlado de forma remota que puede sobrevivir en el aire letal. Esos cuerpos han sido creados con ADN humano, mezclado con ADN de los nativos de Pandora, los Na"vi. Convertido en avatar, Jake puede caminar otra vez. Su misión consiste en infiltrarse entre los Navi, que se han convertido en el mayor obstáculo para la extracción del mineral. Pero cuando Neytiri, una bella Na"vi (Zoe Saldana), salva la vida de Jake, todo cambia: Jake, tras superar ciertas pruebas, es admitido en su clan. Mientras tanto, los hombres esperan los resultados de la misión de Jake.',
       img: 'assets/img/avatar.jpg',
       anio: 2009,
       direccion: 'James Cameron'
+    },
+    {
+      id: 1016,
+      titulo: 'El ciempiés humano',
+      sinopsis: 'Durante un viaje a Alemania, Lindsay y Jenny, dos mujeres estadounidenses, sufren una avería en su coche que las deja extraviadas en medio de la nada. Por suerte, en medio de un bosque azotado por la lluvia encuentran la casa del Dr. Heiter, un viejo cirujano que se muestra encantado de darles refugio. Pero lo que la pareja jamás podría haber imaginado es que se convertirían en simples conejillos de indias para el doctor, que planea crear una nueva especie: el ciempiés humano, formado por tres personas que compartan un único sistema digestivo mediante la unión boca-ano.',
+      img: 'assets/img/bla.jpg',
+      anio: 2009,
+      direccion: 'Tom Six'
     }
   ];
 
-  constructor() {
-    console.log('Servicio listo para usar!');
-  }
-
   getPeliculas(): Pelicula[] {
     return this.peliculas;
+  }
+
+  getPelicula(id: number): Pelicula {
+    return this.peliculas.filter(peli => peli.id == id)[0];
+  }
+
+  buscarPeliculas(termino: string): Pelicula[] {
+    return this.peliculas.filter(peli => peli.titulo.toLowerCase().includes(termino.toLowerCase()));
+  }
+
+  constructor() {
+    console.log('Servicio listo para usar');
   }
 }
