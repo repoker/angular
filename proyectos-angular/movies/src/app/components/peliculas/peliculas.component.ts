@@ -15,7 +15,7 @@ export class PeliculasComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.peliculas = this.peliculasService.getPeliculas());
+    //console.log(this.peliculas = this.peliculasService.getPeliculas());
     this.activatedRoute.paramMap.subscribe(params => {
       if (params.get('termino') != null) {
         this.peliculas = this.peliculasService.buscarPeliculas(params.get('termino'));

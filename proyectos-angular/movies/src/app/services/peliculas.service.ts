@@ -149,6 +149,6 @@ export class PeliculasService {
   }
 
   constructor() {
-    console.log('Servicio listo para usar');
+    //console.log('Servicio listo para usar');
   }
 }

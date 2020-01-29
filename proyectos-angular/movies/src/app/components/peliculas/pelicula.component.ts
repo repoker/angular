@@ -14,7 +14,7 @@ export class PeliculaComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private peliculasService: PeliculasService) {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params.id);
+      //console.log(params.id);
       this.pelicula = this.peliculasService.getPelicula(params.id);
     });
 

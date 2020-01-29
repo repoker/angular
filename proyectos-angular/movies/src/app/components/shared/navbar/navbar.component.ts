@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
   buscarPelicula(terminoBusqueda) {
-    console.log(terminoBusqueda);
+    //console.log(terminoBusqueda);
     if (terminoBusqueda.trim().length > 0) {
       this.router.navigate(['/buscar', terminoBusqueda]);
     }
