@@ -1,0 +1,16 @@
+<div class="nav">
+  <div class="nav-header">
+    <div class="nav-title"> App sobre Rutas</div>
+
+  </div>
+
+  <div class="nav-links">
+    <a [routerLink]="['home']">Home</a>
+    <a [routerLink]="['usuario', 10]">Gestión de usuarios</a>
+  </div>
+
+</div>
+<div class="main-container">
+  <router-outlet></router-outlet>
+
+</div>
