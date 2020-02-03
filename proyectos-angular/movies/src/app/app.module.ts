@@ -9,6 +9,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import {RUTAS} from './app.routes';
 import { SmartTruncatePipe } from './pipes/smart-truncate.pipe';
 import { PeliculaComponent } from './components/peliculas/pelicula.component';
+import { CardComponent } from './components/peliculas/card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PeliculaComponent } from './components/peliculas/pelicula.component';
     AboutComponent,
     PeliculasComponent,
     SmartTruncatePipe,
-    PeliculaComponent
+    PeliculaComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule, RUTAS
