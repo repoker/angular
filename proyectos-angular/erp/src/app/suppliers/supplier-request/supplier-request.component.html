@@ -1,1 +1,10 @@
-<p>supplier-request works!</p>
+<h3>Pedido a proveedor</h3>
+<h4>ID <small>{{proveedor.id}}</small></h4>
+<h4>Nombre <small>{{proveedor.nom}}}</small></h4>
+<hr>
+<label for="referencia">Referencia</label>
+<input type="text" id="referencia">
+<label for="cantidad">Cantidad</label>
+<input type="number" id="cantidad"><br>
+<button type="button"(click)="pedir()">Enviar pedido</button><br>
+<a routerLink="/proveedores">Volver al listado</a>

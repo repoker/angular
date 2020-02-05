@@ -1,1 +1,11 @@
-<p>supplier-list works!</p>
+<div class="container">
+  <h1>Listado de proveedores</h1>
+  <hr>
+  <table>
+    <tr><th>ID</th><th>Nombre</th></tr>
+    <tr *ngFor="let proveedor of proveedores">
+      <td>{{proveedor.id}}</td>
+      <td><a routerLink="peticion/{{proveedor.id}}">{{proveedor.nom}}</a></td>
+    </tr>
+  </table>
+</div>
