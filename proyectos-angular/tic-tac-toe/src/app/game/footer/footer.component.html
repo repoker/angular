@@ -1,0 +1,11 @@
+<p>Número de Jugadas {{ (stateService.state$ | async).jugadas }} </p>
+
+<div class="form-group row">
+  <label class="col-2 col-form-label">&nbsp;</label>
+  <div class="input-group col-md-8">
+    <button type="submit" class="btn btn-outline-primary" (click)="stateService.reset()">
+      Empezar de Nuevo
+    </button>
+  </div>
+</div>
+

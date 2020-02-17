@@ -11,7 +11,9 @@ export class SquareComponent implements OnInit {
   @Input() col: number;
 
   constructor(private stateService: StateService) {
+    this.stateService = stateService;
   }
+
 
   ngOnInit() {
   }
@@ -20,4 +22,7 @@ export class SquareComponent implements OnInit {
     console.log('Square click', this.row, this.col);
     this.stateService.updateValue(this.row, this.col);
   }
+
+
+
 }

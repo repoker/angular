@@ -1,2 +1,8 @@
-<app-header></app-header>
-<app-board></app-board>
+<div *ngIf="_status == 'fetching'">Loading...</div>
+<div *ngIf="_status == 'success'">
+  <app-header></app-header>
+  <app-board></app-board>
+  <app-footer></app-footer>
+  <button (click)="handleResetButton()">Reset</button>
+</div>
+<div *ngIf="_status != 'success' && _status != 'fetching'"> There is an error in the backend communication. Error: {{ _status }} </div>

@@ -1,11 +1,5 @@
-button {
-  height: 100px;
-  width: 100px;
-}
+button { height: 100px; width: 100px; }
 .clickable {
-  cursor: pointer;
-}
-.not-clickable {
-  cursor: not-allowed;
-}
+  cursor: pointer; }
+.not-clickable {  cursor: not-allowed; }
 
