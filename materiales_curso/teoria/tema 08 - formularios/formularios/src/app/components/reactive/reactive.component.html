@@ -1,0 +1,88 @@
+<h4>Formularios <small>reactive</small></h4><hr>
+<form [formGroup]="formulario" (submit)="guardar()">
+  <div formGroupName="nombreCompleto">
+    <div class="form-group row">
+      <label for="nombre" class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input id="nombre" class="form-control"
+               type="text" placeholder="Nombre" formControlName="nombre">
+        <div class="alert alert-danger"
+             *ngIf="!formulario.get('nombreCompleto.nombre').valid &&
+                  (formulario.get('nombreCompleto.nombre').touched ||
+                  formulario.get('nombreCompleto.nombre').dirty)">
+          <div *ngIf="formulario.get('nombreCompleto.nombre').errors?.required">
+            El campo es obligatorio
+          </div>
+          <div *ngIf="formulario.get('nombreCompleto.nombre').errors?.minlength">
+            El campo debe tener 5 caracteres como mínimo
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="apellido" class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input id="apellido" class="form-control"
+               type="text" placeholder="Apellido" formControlName="apellido">
+        <div class="alert alert-danger"
+             *ngIf="!formulario.get('nombreCompleto.apellido').valid &&
+                  (formulario.get('nombreCompleto.apellido').touched ||
+                  formulario.get('nombreCompleto.apellido').dirty)">
+          <div *ngIf="formulario.get('nombreCompleto.apellido').errors?.required">
+            El campo es obligatorio
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="correo" class="col-2 col-form-label">Correo</label>
+    <div class="col-md-8">
+      <input id="correo" class="form-control"
+             type="email" placeholder="Correo electrónico" formControlName="correo">
+      <div class="alert alert-danger"
+           *ngIf="!formulario.get('correo').valid && (formulario.get('correo').touched || formulario.get('correo').dirty)">
+        <div *ngIf="formulario.controls['correo'].errors?.required">
+          El campo es obligatorio
+        </div>
+        <div *ngIf="formulario.controls['correo'].errors?.pattern">
+          El formato no cumple el patrón
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Aficiones</label>
+    <div class="col-md-8" formArrayName="aficiones">
+      <input *ngFor="let aficion of formulario.get('aficiones')['controls']; let i=index"
+             type="text" class="form-control" [formControlName]="i">
+      <button (click)="nuevaAficion()" type="button" class="btn btn-outline-secondary">+Afición</button>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="nick" class="col-2 col-form-label">Nick</label>
+    <div class="col-md-8">
+      <input formControlName="nick" id="nick" class="form-control" type="text" placeholder="Nick">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+      &nbsp;
+      <button (click)="reiniciar()" type="button" class="btn btn-outline-primary">
+        Reset
+      </button>
+
+    </div>
+  </div>
+VALID: {{ formulario.valid }} <br>
+STATUS: {{ formulario.status }}
+
+</form>
