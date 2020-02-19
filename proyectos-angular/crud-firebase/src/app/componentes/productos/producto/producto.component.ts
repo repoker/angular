@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Producto} from '../../../modelos/producto';
 import {ProductoService} from '../../../servicios/producto.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-producto',
@@ -10,7 +11,7 @@ import {ProductoService} from '../../../servicios/producto.service';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor(private productoService: ProductoService) {
+  constructor(private productoService: ProductoService, private toastrService: ToastrService) {
   }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class ProductoComponent implements OnInit {
       this.productoService.actualizarProducto(productForm.value);
     }
     this.resetForm(productForm);
-    //this.toastrService.success('Operación correcta', 'Producto registrado');
+    this.toastrService.success('Operación correcta', 'Producto registrado');
   }
 
   resetForm(productForm?: NgForm) {
