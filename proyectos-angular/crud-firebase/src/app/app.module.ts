@@ -10,6 +10,8 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { ListaProductosComponent } from './componentes/productos/lista-productos/lista-productos.component';
 import { ProductoComponent } from './componentes/productos/producto/producto.component';
 import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    // ToastrModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyADnbcArW8cw_NQHj_gLRQPEeVBmg4cIck",
       authDomain: "crud-firebase-4c942.firebaseapp.com",

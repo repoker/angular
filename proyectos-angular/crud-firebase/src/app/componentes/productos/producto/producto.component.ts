@@ -26,6 +26,7 @@ export class ProductoComponent implements OnInit {
       this.productoService.actualizarProducto(productForm.value);
     }
     this.resetForm(productForm);
+    //this.toastrService.success('Operación correcta', 'Producto registrado');
   }
 
   resetForm(productForm?: NgForm) {
