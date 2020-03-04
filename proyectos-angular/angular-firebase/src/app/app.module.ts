@@ -1,33 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { AngularFireModule } from '@angular/fire'
-import { AngularFirestoreModule } from '@angular/fire/firestore'
-import { AngularFireAuthModule } from '@angular/fire/auth'
-import { environment } from '../environments/environment'
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component'
-import { AppRoutingModule } from './app-routing.module'
-import { FormsModule } from '@angular/forms'
-import { LoginComponent } from './auth/login/login.component'
-import { RegisterComponent } from './auth/register/register.component'
-import { UserComponent } from './auth/user/user.component'
+import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    UserComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, UserComponent],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserModule,
-    FormsModule,
-    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

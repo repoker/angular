@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
-  firebase: {
-    apiKey: 'AIzaSyADnbcArW8cw_NQHj_gLRQPEeVBmg4cIck',
-    authDomain: 'crud-firebase-4c942.firebaseapp.com',
-    databaseURL: 'https://crud-firebase-4c942.firebaseio.com',
-    projectId: 'crud-firebase-4c942',
-    storageBucket: 'crud-firebase-4c942.appspot.com',
-    messagingSenderId: '484328989711',
-  },
+  firebaseConfig: {
+    apiKey: 'AIzaSyAPBIPLAaBJMiagd7fKppnt96n5Fud9reY',
+    authDomain: 'ng-pue-auth.firebaseapp.com',
+    databaseURL: 'https://ng-pue-auth.firebaseio.com',
+    projectId: 'ng-pue-auth',
+    storageBucket: 'ng-pue-auth.appspot.com',
+    messagingSenderId: '191242911519',
+    appId: '1:191242911519:web:e075af330c07becd883a2a'
+  }
 };

@@ -1,9 +1,7 @@
 <ng-container *ngIf="isLogged$ | async; else signIn">
-  <button (click)="onSignOut()">Sign out</button>
+  <button (click)="onSignOut()">Sign out!</button>
 </ng-container>
 
 <ng-template #signIn>
   <button (click)="onSignIn()">Sign in with Google!</button>
 </ng-template>
-
-<p>User: {{ user | async }}</p>

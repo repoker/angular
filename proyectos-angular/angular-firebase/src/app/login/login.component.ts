@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth/auth.service';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   public user = this.authService.user;
   public isLogged$ = this.authService.isLogged$;
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSignIn() {
-    this.authService.doGoogleLogin();
+    this.authService.doGoogleLogin().then();
   }
 
   onSignOut() {
-    this.authService.doLogout();
+    this.authService.doLogOut();
   }
 }
