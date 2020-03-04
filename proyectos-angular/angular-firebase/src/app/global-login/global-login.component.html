@@ -1,0 +1,21 @@
+<span i18n="@@myWelcomeWord">Welcome</span>
+
+<span i18n>Updated {minutes, plural, =0 {just now} =1 {one minute ago} other {{{minutes}} minutes ago}}</span>
+
+<span i18n>The author is {gender, select, male {male} female {female} other {other}}</span>
+
+<ng-container *ngIf="isLogged$ | async; else signIn">
+  <ng-container *ngIf="user | async as user">
+    <span>, {{ user.displayName }}</span>
+  </ng-container>
+
+  <button mat-icon-button (click)="onSignOut()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</ng-container>
+
+<ng-template #signIn>
+  <button mat-icon-button (click)="onSignIn()">
+    <mat-icon>verified_user</mat-icon>
+  </button>
+</ng-template>
