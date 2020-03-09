@@ -9,12 +9,18 @@ import { AuthService } from '../services/auth/auth.service';
 export class LoginComponent implements OnInit {
   public user = this.authService.user;
   public isLogged$ = this.authService.isLogged$;
+  public age = 34;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {}
 
   onSignIn() {
+    debugger;
+    console.log('antes', this.age);
+    this.age = this.age + 1;
+    console.log('despues', this.age);
+
     this.authService.doGoogleLogin().then();
   }
 
